@@ -1,10 +1,11 @@
-<!DOCTYPE html>
+    <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WAEC RESULTS CHECKER</title>
+    <link rel="stylesheet" href="index.css">
 </head>
 
 <body>
@@ -14,308 +15,44 @@
         <h1 class="header">Results Grade Checker</h1><br>
 
         <form id="subjectForm">
-            <label for="subject1" class="subject">Subject 1:</label>
-            <input type="number" id="subject1" name="subject1" min="0" max="100" required>
-            <span id="subject1Grade"></span><br><br>
+            
+        <label for="subject1" class="subject">Subject 1:</label>
+        <input type="number" id="subject1" name="subject1" min="0" max="100" required>
+        <span id="subject1Grade">-</span><br><br>
+        <small class="moreNum"></small>
 
-            <label for="subject2" class="subject">Subject 2:</label>
-            <input type="number" id="subject2" name="subject2" min="0" max="100" required>
-            <span id="subject2Grade"></span><br><br>
+        <label for="subject2" class="subject">Subject 2:</label>
+        <input type="number" id="subject2" name="subject2" min="0" max="100" required>
+        <span id="subject2Grade">-</span><br><br>
+         <small class="moreNum"></small>
 
-            <label for="subject3" class="subject">Subject 3:</label>
-            <input type="number" id="subject3" name="subject3" min="0" max="100" required>
-            <span id="subject3Grade"></span><br><br>
 
-            <label for="subject4" class="subject">Subject 4:</label>
-            <input type="number" id="subject4" name="subject4" min="0" max="100" required>
-            <span id="subject4Grade"></span><br><br>
+        <label for="subject3" class="subject">Subject 3:</label>
+        <input type="number" id="subject3" name="subject3" min="0" max="100" required>
+        <span id="subject3Grade">-</span><br><br>
+         <small class="moreNum"></small>
 
-            <label for="subject5" class="subject">Subject 5:</label>
-            <input type="number" id="subject5" name="subject5" min="0" max="100" required>
-            <span id="subject5Grade"></span><br><br>
 
-            <input type="button" class="btn" value="Calculate Equivalent Grades"
-                onclick="calculateEquivalentGrades()"><br><br>
-        </form>
+        <label for="subject4" class="subject">Subject 4:</label>
+        <input type="number" id="subject4" name="subject4" min="0" max="100" required>
+        <span id="subject4Grade">-</span><br><br>
+         <small class="moreNum"></small>
+
+
+        <label for="subject5" class="subject">Subject 5:</label>
+        <input type="number" id="subject5" name="subject5" min="0" max="100" required>
+        <span id="subject5Grade">-</span><br><br>
+         <small class="moreNum"></small>
+
+
+        <input type="button" class="btn" value="Calculate Equivalent Grades" onclick="calculateEquivalentGrades()">
+    </form>
 
         <p class="subject">Total Score: <span id="totalScore"></span></p>
 
     </section>
 
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-        }
-
-
-        body {
-            padding: 100px;
-            background-color: blue;
-            font-family: Arial, Helvetica, sans-serif;
-        }
-
-
-        .body {
-            max-width: 350px;
-            border: 1px solid black;
-            border: none;
-            border-radius: 10px;
-            margin: auto;
-            padding: 20px;
-            background-color: white;
-        }
-
-        .header {
-            text-align: center;
-            font-size: 30px;
-            margin-top: 25px;
-            margin-bottom: 10px;
-        }
-
-        input {
-            margin: 5px 0px;
-            border-radius: 5px;
-            border: 1px solid grey;
-            font-size: 20px;
-            padding: 2px 5px;
-        }
-
-        .subject {
-            font-size: 20px;
-            font-weight: 550;
-            color: rgba(0, 0, 0, 0.719);
-        }
-
-        #subject1 {
-            color: black;
-        }
-
-        .btn {
-            background-color: blue;
-            color: white;
-            margin-left: 40px;
-            padding: 8px 10px;
-            border-radius: 15px;
-            border: none;
-        }
-
-        .btn:hover {
-            background-color: grey;
-        }
-
-        #subject1Grade {
-            font-size: 20px;
-            font-weight: 550;
-            margin-left: 25px;
-        }
-
-        #subject2Grade {
-            font-size: 20px;
-            font-weight: 550;
-            margin-left: 25px;
-        }
-
-        #subject3Grade {
-            font-size: 20px;
-            font-weight: 550;
-            margin-left: 25px;
-        }
-
-        #subject4Grade {
-            font-size: 20px;
-            font-weight: 550;
-            margin-left: 25px;
-        }
-
-        #subject5Grade {
-            font-size: 20px;
-            font-weight: 550;
-            margin-left: 25px;
-        }
-
-        #totalScore {
-            font-size: 20px;
-            font-weight: 550;
-            margin-left: 5px;
-            color: black;
-        }
-
-
-
-        @media screen and (max-width:500px) {
-
-            body {
-                padding: 30px;
-                margin-bottom: 5px;
-            }
-        }
-
-        @media screen and (max-width:400px) {
-            .btn {
-                background-color: blue;
-                color: white;
-                padding: 8px 15px;
-                border-radius: 15px;
-                border: none;
-                font-size: 15px;
-                font-weight: 550;
-            }
-
-
-        }
-
-        @media screen and (max-width:375px) {
-            .btn {
-                background-color: blue;
-                color: white;
-                padding: 8px 5px;
-                border-radius: 15px;
-                border: none;
-                max-width: 220px;
-                font-size: 15px;
-                font-weight: 550;
-            }
-        }
-
-        
-        @media screen and (max-width:320px) {
-            .btn {
-                background-color: blue;
-                color: white;
-                margin-left: 10px;
-                padding: 8px 5px;
-                border-radius: 15px;
-                border: none;
-                max-width: 230px;
-                font-size: 15px;
-                font-weight: 550;
-            }
-
-            .subject {
-                font-size: 15px;
-                font-weight: 550;
-                color: rgba(0, 0, 0, 0.719);
-            }
-
-            input {
-                margin: 5px 0px;
-                border-radius: 5px;
-                border: 1px solid grey;
-                font-size: 20px;
-                padding: 2px 5px;
-                max-width: 50px;
-            }
-
-        }
-
-        @media screen and (max-width:299px) {
-
-            body {
-                padding: 30px;
-                background-color: blue;
-                font-family: Arial, Helvetica, sans-serif;
-                margin-bottom: 5px;
-            }
-
-            .header {
-                text-align: center;
-                font-size: 25px;
-                margin-top: 25px;
-                margin-bottom: 10px;
-            }
-
-            .subject {
-                font-size: 15px;
-                font-weight: 550;
-                color: rgba(0, 0, 0, 0.719);
-            }
-
-            input {
-                margin: 5px 0px;
-                border-radius: 5px;
-                border: 1px solid grey;
-                font-size: 20px;
-                padding: 2px 5px;
-                max-width: 50px;
-            }
-
-            .btn {
-                background-color: blue;
-                color: white;
-                margin-left: -5px;
-                padding: 8px 5px;
-                border-radius: 15px;
-                border: none;
-                max-width: 220px;
-                font-size: 15px;
-                font-weight: 550;
-            }
-
-
-        }
-    </style>
-
-
-    <script>
-        function calculateEquivalentGrades() {
-            //Get the input valus for each subject
-            const subject1Score = parseFloat(document.getElementById('subject1').value) || 0;
-            const subject2Score = parseFloat(document.getElementById('subject2').value) || 0;
-            const subject3Score = parseFloat(document.getElementById('subject3').value) || 0;
-            const subject4Score = parseFloat(document.getElementById('subject4').value) || 0;
-            const subject5Score = parseFloat(document.getElementById('subject5').value) || 0;
-
-            //Calculate the total score
-            const totalScore = subject1Score + subject2Score + subject3Score + subject4Score + subject5Score
-
-            //Display the total score
-            document.getElementById('totalScore').textContent = totalScore
-
-            // Calculate and display equivalent grades for each subject
-            displayEquivalentGrade('subject1Grade', subject1Score);
-            displayEquivalentGrade('subject2Grade', subject2Score);
-            displayEquivalentGrade('subject3Grade', subject3Score);
-            displayEquivalentGrade('subject4Grade', subject4Score);
-            displayEquivalentGrade('subject5Grade', subject5Score);
-        }
-
-        function displayEquivalentGrade(elementId, score) {
-
-            let grade = '';
-
-            if (score >= 0 && score <= 39) {
-                grade = 'F9';
-
-            } else if (score >= 40 && score <= 44) {
-                grade = 'E8';
-
-            } else if (score >= 45 && score <= 49) {
-                grade = 'D7';
-
-            } else if (score >= 50 && score <= 54) {
-                grade = 'C6';
-
-            } else if (score >= 55 && score <= 59) {
-                grade = 'C5';
-
-            } else if (score >= 60 && score <= 64) {
-                grade = 'C4';
-
-            } else if (score >= 65 && score <= 69) {
-                grade = 'B3';
-
-            } else if (score >= 70 && score <= 74) {
-                grade = 'B2';
-
-            } else if (score >= 75 && score <= 100) {
-                grade = 'A';
-            }
-            document.getElementById(elementId).textContent = grade;
-        }
-
-    </script>
+    <script src="index.js"></script>
 </body>
-
 </html>
