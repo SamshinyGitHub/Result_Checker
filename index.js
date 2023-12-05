@@ -7,24 +7,7 @@
         // ]
 
         
-            //Get the input valus for each subject
-            // const subject1Score = parseFloat(document.getElementById('subject1').value) ;
-            // console.log(subject1Score)
-
-            // if(isNaN(subject1Score)){
-            //     return alert('Score cannot be empty')
-            // }
-            //     if(subject1Score > 100){
-            //     return alert("Please enter values between 0 - 100")
-                
-            // }
-
-
-
-
-
-            
-
+         
            function calculateEquivalentGrades() {
             event.preventDefault()
 
@@ -34,40 +17,84 @@
             const subject4Score = parseFloat(document.getElementById('subject4').value) || 0;
             const subject5Score = parseFloat(document.getElementById('subject5').value) || 0;
 
+
+
+            let numEmpty1 = document.querySelector(".moreNum1");
+            let numEmpty2 = document.querySelector(".moreNum2");
+            let numEmpty3 = document.querySelector(".moreNum3");
+            let numEmpty4 = document.querySelector(".moreNum4");
+            let numEmpty5 = document.querySelector(".moreNum5");
+
+
+
                if (subject1Score == "") {
-                 alert("empty input 1");
+                numEmpty1.textContent = "Subject 1 can not be empty";
                }
+
+               else if (subject1Score > 100) {
+                numEmpty1.textContent = "Input greater than 100";
+
+               } else {
+                 numEmpty1.textContent = "";
+               }
+
+
 
                function subSection2(){
                  if (subject2Score == "") {
-                alert("empty input 2");
-               
-               }
+                   numEmpty2.textContent = "Subject 2 can not be empty";
+                 } 
+                 else if (subject2Score > 100) {
+                numEmpty2.textContent = "Input greater than 100";
+                   
+                 } else {
+                   numEmpty2.textContent = "";
+                 }
                }
                subSection2();
 
+
                function subSection3(){
                  if (subject3Score == "") {
-                  alert("empty input 3");
-               
-               }
+                   numEmpty3.textContent = "Subject 3 can not be empty";
+                 } 
+                 else if (subject3Score > 100) {
+                   numEmpty3.textContent = "Input greater than 100";
+                 } 
+                 else {
+                   numEmpty3.textContent = "";
+                 }
                }
                subSection3();
 
+               
+               
                function subSection4(){
                  if (subject4Score == "") {
-                 alert("empty input 4");
-               
-               }
+                   numEmpty4.textContent = "Subject 4 can not be empty";
+                 } 
+                 else if (subject4Score > 100) {
+                   numEmpty4.textContent = "Input greater than 100";
+                 } 
+                 else {
+                   numEmpty4.textContent = "";
+                 }
                }
                subSection4();
            
-               function subSection5(){
-                 if (subject4Score == "") {
-                  alert("empty input 5");
                
+               
+               function subSection5(){
+                 if (subject5Score == "") {
+                  numEmpty5.textContent = "Subject 5 can not be empty";
                }
-               }
+                else if (subject5Score > 100) {
+                numEmpty5.textContent = "Input greater than 100";
+                   
+                 } else {
+                   numEmpty5.textContent = "";
+                 }
+            }
                subSection5();
            
 
@@ -99,9 +126,7 @@
             if (score >= 0 && score <= 39) {
                 grade = 'F9';
             } 
-                   if (score > 100) {
-                     numGreater.textContent = "value can not be more than 100";
-                   } 
+                  
                    else if (score >= 40 && score <= 44) {
                      grade = "E8";
                    } else if (score >= 45 && score <= 49) {
